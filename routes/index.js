@@ -1,13 +1,11 @@
-const express = require('express'); //import express
+const express = require('express');
 
-const router  = express.Router(); 
+const router  = express.Router();
 
-const Controller = require('../controllers'); 
+// Instead of setting the function res.json here we move it to the Controller.
+const myController = require('../controllers');
 
-router.post('/', Controller.newMessage); 
-
-router.get('/', (req, res) => {
-  res.send('Mayara Pedrosa');
-});
+// Execute the given function from the controller wen accessing the route "/".
+router.get('/', myController.newMessage);
 
 module.exports = router; // export to use in server.js

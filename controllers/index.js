@@ -1,5 +1,5 @@
 const newMessage = (req, res, next) => {
-  res.json({message: "POST new message here"});
+  res.json('Mayara Pedrosa');
 };
 
-module.exports = {newMessage: newMessage};
+module.exports = {newMessage};
