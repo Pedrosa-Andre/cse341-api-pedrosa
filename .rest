@@ -1,1 +1,20 @@
 GET http://localhost:3000 HTTP/1.1
+
+###
+GET http://localhost:3000/another HTTP/1.1
+
+###
+# Get all the contacts
+GET http://localhost:3000/contacts HTTP/1.1
+
+###
+# Get Andre Pedrosa by the ID
+GET http://localhost:3000/contact?id=650f9ee430fd12d8916c4a00 HTTP/1.1
+
+###
+# Get Mayara Pedrosa by the ID
+GET http://localhost:3000/contact?id=650f9efe30fd12d8916c4a01 HTTP/1.1
+
+###
+# Get Jonathan Pedrosa by the ID
+GET http://localhost:3000/contact?id=650f9f1430fd12d8916c4a02 HTTP/1.1
