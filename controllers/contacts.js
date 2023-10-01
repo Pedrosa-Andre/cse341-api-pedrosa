@@ -10,7 +10,7 @@ const getAllContacts = async (req, res) => {
 };
 
 const getContactById = async (req, res) => {
-  const id = req.query.id;
+  const id = req.params.id;
   const query = {
     _id: new ObjectId(id),
   };
