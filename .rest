@@ -49,11 +49,7 @@ PUT http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Andre",
-  "lastName": "Pedrosa",
-  "email": "ped17006@byui.edu",
-  "favoriteColor": "red",
-  "birthday": "08/05/1995"
+  "favoriteColor": "red"
 }
 
 ###
@@ -62,11 +58,7 @@ PUT http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Andre",
-  "lastName": "Pedrosa",
-  "email": "ped17006@byui.edu",
-  "favoriteColor": "cyan",
-  "birthday": "08/05/1995"
+  "favoriteColor": "cyan"
 }
 
 ###
@@ -125,11 +117,7 @@ PUT https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP
 content-type: application/json
 
 {
-  "firstName": "Andre",
-  "lastName": "Pedrosa",
-  "email": "ped17006@byui.edu",
-  "favoriteColor": "red",
-  "birthday": "08/05/1995"
+  "favoriteColor": "red"
 }
 
 ###
@@ -138,11 +126,7 @@ PUT https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP
 content-type: application/json
 
 {
-  "firstName": "Andre",
-  "lastName": "Pedrosa",
-  "email": "ped17006@byui.edu",
-  "favoriteColor": "cyan",
-  "birthday": "08/05/1995"
+  "favoriteColor": "cyan"
 }
 
 ###

@@ -88,13 +88,6 @@ const addNewContact = async (req, res) => {
 const updateContact = async (req, res) => {
   const userData = req.body;
 
-  try {
-    // Check if the given data isn't missing any field.
-    verifyUserData(userData);
-  } catch (error) {
-    return res.status(400).send(error);
-  }
-
   // Get the ID parameter from the url.
   const id = req.params.id;
   // Create a query for the database with the id.
