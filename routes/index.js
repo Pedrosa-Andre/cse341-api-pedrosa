@@ -1,6 +1,6 @@
 const express = require('express');
 
-const router  = express.Router();
+const router = express.Router();
 
 // Instead of setting the function res.json here we move it to the Controller.
 const myController = require('../controllers');

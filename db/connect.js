@@ -1,7 +1,9 @@
 const MongoClient = require('mongodb').MongoClient;
 const dotenv = require('dotenv');
+
 dotenv.config();
 
+// eslint-disable-next-line no-underscore-dangle
 let _db;
 
 const initDb = (callback) => {
@@ -17,6 +19,7 @@ const initDb = (callback) => {
     .catch((err) => {
       callback(err);
     });
+  return true;
 };
 
 const getDb = () => {

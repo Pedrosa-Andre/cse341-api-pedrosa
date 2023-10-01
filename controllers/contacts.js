@@ -1,7 +1,7 @@
-const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const mongodb = require('../db/connect');
 
-const getAllContacts = async (req, res, next) => {
+const getAllContacts = async (req, res) => {
   const result = await mongodb.getDb().db().collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -9,25 +9,25 @@ const getAllContacts = async (req, res, next) => {
   });
 };
 
-const getContactById = async (req, res, next) => {
-  let id = req.query.id;
-  var query = {
-    "_id": new ObjectId(id)
+const getContactById = async (req, res) => {
+  const id = req.query.id;
+  const query = {
+    _id: new ObjectId(id),
   };
   const result = await mongodb.getDb().db().collection('contacts').find(query);
-  result.toArray(
-    function (err, result) {
+  result
+    .toArray((err, response) => {
       if (err) throw err;
-      console.log(result);
+      console.log(response);
       db.close();
-    }
-  ).then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+    })
+    .then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
 };
 
 module.exports = {
   getAllContacts,
-  getContactById
+  getContactById,
 };
