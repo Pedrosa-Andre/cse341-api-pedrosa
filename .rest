@@ -1,43 +1,150 @@
-GET http://localhost:3000 HTTP/1.1
-
-###
-GET http://localhost:3000/another HTTP/1.1
-
-###
-# Get all the contacts
+# Get all the contacts.
 GET http://localhost:3000/contacts HTTP/1.1
 
 ###
-# Get Andre Pedrosa by the ID
+# Get André Pedrosa by the ID.
 GET http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 
 ###
-# Get Mayara Pedrosa by the ID
-GET http://localhost:3000/contacts/650f9efe30fd12d8916c4a01 HTTP/1.1
+# Create new contact.
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Tester",
+  "lastName": "Foobar",
+  "email": "tester@example.com",
+  "favoriteColor": "rainbowish black",
+  "birthday": "09/30/2003"
+}
 
 ###
-# Get Jonathan Pedrosa by the ID
-GET http://localhost:3000/contacts/650f9f1430fd12d8916c4a02 HTTP/1.1
+# Try to create new contact with an empty field.
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
 
+{
+  "firstName": "Tester",
+  "lastName": "",
+  "email": "tester@example.com",
+  "favoriteColor": "rainbowish black",
+  "birthday": "09/30/2003"
+}
 
 ###
-GET https://api-pedrosa-nqrr.onrender.com HTTP/1.1
+# Try to create new contact, but with a missing field.
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Tester",
+  "lastName": "Foobar",
+  "favoriteColor": "rainbowish black",
+  "birthday": "09/30/2003"
+}
 
 ###
-GET https://api-pedrosa-nqrr.onrender.com/another HTTP/1.1
+# Update favoriteColor of André Pedrosa to red.
+PUT http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Andre",
+  "lastName": "Pedrosa",
+  "email": "ped17006@byui.edu",
+  "favoriteColor": "red",
+  "birthday": "08/05/1995"
+}
 
 ###
-# Get all the contacts
+# Update favoriteColor of André Pedrosa to cyan.
+PUT http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Andre",
+  "lastName": "Pedrosa",
+  "email": "ped17006@byui.edu",
+  "favoriteColor": "cyan",
+  "birthday": "08/05/1995"
+}
+
+###
+# Delete the user with the given id (test deleting the same id twice).
+DELETE http://localhost:3000/contacts/6518f8e170b4d8d3f0455d7a HTTP/1.1
+
+###
+# Get all the contacts.
 GET https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
 
 ###
-# Get Andre Pedrosa by the ID
+# Get André Pedrosa by the ID.
 GET https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 
 ###
-# Get Mayara Pedrosa by the ID
-GET https://api-pedrosa-nqrr.onrender.com/contacts/650f9efe30fd12d8916c4a01 HTTP/1.1
+# Create new contact.
+POST https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Tester",
+  "lastName": "Foobar",
+  "email": "tester@example.com",
+  "favoriteColor": "rainbowish black",
+  "birthday": "09/30/2003"
+}
 
 ###
-# Get Jonathan Pedrosa by the ID
-GET https://api-pedrosa-nqrr.onrender.com/contacts/650f9f1430fd12d8916c4a02 HTTP/1.1
+# Try to create new contact with an empty field.
+POST https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Tester",
+  "lastName": "",
+  "email": "tester@example.com",
+  "favoriteColor": "rainbowish black",
+  "birthday": "09/30/2003"
+}
+
+###
+# Try to create new contact, but with a missing field.
+POST https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Tester",
+  "lastName": "Foobar",
+  "favoriteColor": "rainbowish black",
+  "birthday": "09/30/2003"
+}
+
+###
+# Update favoriteColor of André Pedrosa to red.
+PUT https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Andre",
+  "lastName": "Pedrosa",
+  "email": "ped17006@byui.edu",
+  "favoriteColor": "red",
+  "birthday": "08/05/1995"
+}
+
+###
+# Update favoriteColor of André Pedrosa to cyan.
+PUT https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Andre",
+  "lastName": "Pedrosa",
+  "email": "ped17006@byui.edu",
+  "favoriteColor": "cyan",
+  "birthday": "08/05/1995"
+}
+
+###
+# Delete the user with the given id (test deleting the same id twice).
+DELETE https://api-pedrosa-nqrr.onrender.com/contacts/6518f8e170b4d8d3f0455d7a HTTP/1.1
