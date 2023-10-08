@@ -5,7 +5,7 @@
     "description": "My API for CSE341 class assignments",
     "version": "1.0.0"
   },
-  "host": "api-pedrosa-nqrr.onrender.com/",
+  "host": "api-pedrosa-nqrr.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
