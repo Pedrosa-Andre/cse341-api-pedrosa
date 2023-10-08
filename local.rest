@@ -1,13 +1,13 @@
 # Get all the contacts.
-GET https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+GET http://localhost:3000/contacts HTTP/1.1
 
 ###
 # Get André Pedrosa by the ID.
-GET https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+GET http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 
 ###
 # Create new contact.
-POST https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
@@ -20,7 +20,7 @@ content-type: application/json
 
 ###
 # Try to create new contact with an empty field.
-POST https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
@@ -33,7 +33,7 @@ content-type: application/json
 
 ###
 # Try to create new contact, but with a missing field.
-POST https://api-pedrosa-nqrr.onrender.com/contacts HTTP/1.1
+POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
@@ -45,7 +45,7 @@ content-type: application/json
 
 ###
 # Update favoriteColor of André Pedrosa to red.
-PUT https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+PUT http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 content-type: application/json
 
 {
@@ -54,7 +54,7 @@ content-type: application/json
 
 ###
 # Update favoriteColor of André Pedrosa to cyan.
-PUT https://api-pedrosa-nqrr.onrender.com/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
+PUT http://localhost:3000/contacts/650f9ee430fd12d8916c4a00 HTTP/1.1
 content-type: application/json
 
 {
@@ -63,4 +63,4 @@ content-type: application/json
 
 ###
 # Delete the user with the given id (test deleting the same id twice).
-DELETE https://api-pedrosa-nqrr.onrender.com/contacts/6518f8e170b4d8d3f0455d7a HTTP/1.1
+DELETE http://localhost:3000/contacts/6518f8e170b4d8d3f0455d7a HTTP/1.1
