@@ -1,12 +1,13 @@
-const express = require('express');
-
-const router = express.Router();
+const router = require('express').Router();
+const contacts = require('./contacts');
+const swagger = require('./swagger');
 
 // Instead of setting the function res.json here we move it to the Controller.
 const myController = require('../controllers');
 
-// Execute the given function from the controller wen accessing the route "/".
-router.get('/', myController.newMessage);
-router.get('/another', myController.anotherMessage);
+router.use('/contacts', contacts);
+router.use('/', swagger);
+router.use('/', myController.newMessage);
+router.use('/another', myController.anotherMessage);
 
 module.exports = router; // export to use in server.js

@@ -10,6 +10,12 @@
     "object-shorthand": "off",
     "class-methods-use-this": "off",
     "prefer-destructuring": "off",
-    "import/no-extraneous-dependencies": "warn"
+    "import/no-extraneous-dependencies": ["warn", { "devDependencies": true }],
+    "node/no-unpublished-require": [
+      "error",
+      {
+        "allowModules": ["swagger-autogen"]
+      }
+    ]
   }
 }
