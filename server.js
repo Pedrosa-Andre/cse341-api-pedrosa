@@ -6,22 +6,22 @@ const mongodb = require('./db/connect');
 
 const app = express();
 
-app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader(
-      'Access-Control-Allow-Origin',
-      'https://cse341-contacts-frontend.netlify.app/',
-    );
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'GET, POST, PUT, DELETE, OPTIONS',
-    );
-    next();
-  })
-  .use('/', require('./routes'));
+// app
+//   .use(bodyParser.json())
+//   .use((req, res, next) => {
+//     res.setHeader(
+//       'Access-Control-Allow-Origin',
+//       'https://cse341-contacts-frontend.netlify.app/',
+//     );
+//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+//     res.setHeader('Content-Type', 'application/json');
+//     res.setHeader(
+//       'Access-Control-Allow-Methods',
+//       'GET, POST, PUT, DELETE, OPTIONS',
+//     );
+//     next();
+//   })
+//   .use('/', require('./routes'));
 
 app.use('/', routes);
 
